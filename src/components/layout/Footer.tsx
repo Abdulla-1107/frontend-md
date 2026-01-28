@@ -64,7 +64,7 @@ export const Footer = () => {
             <h4 className="font-semibold mb-4">{t('footer.followUs')}</h4>
             <div className="flex gap-4">
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/aliyarova_1988"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="h-10 w-10 rounded-full bg-accent flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
