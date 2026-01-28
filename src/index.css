@@ -1,0 +1,242 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Uzbek Doppi E-commerce Design System
+   Inspired by traditional Uzbek patterns, silk road colors, and premium aesthetics
+*/
+
+@layer base {
+  :root {
+    /* Warm ivory background with Uzbek-inspired color palette */
+    --background: 40 33% 98%;
+    --foreground: 220 25% 15%;
+
+    --card: 40 25% 97%;
+    --card-foreground: 220 25% 15%;
+
+    --popover: 40 33% 98%;
+    --popover-foreground: 220 25% 15%;
+
+    /* Royal Uzbek Blue - primary brand color */
+    --primary: 215 65% 35%;
+    --primary-foreground: 40 33% 98%;
+
+    /* Warm Gold accent - silk road inspiration */
+    --secondary: 38 75% 55%;
+    --secondary-foreground: 220 25% 15%;
+
+    --muted: 40 20% 93%;
+    --muted-foreground: 220 15% 45%;
+
+    /* Terracotta accent */
+    --accent: 15 65% 55%;
+    --accent-foreground: 40 33% 98%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 40 33% 98%;
+
+    --border: 40 20% 88%;
+    --input: 40 20% 90%;
+    --ring: 215 65% 35%;
+
+    --radius: 0.75rem;
+
+    /* Custom semantic tokens */
+    --gold: 38 75% 55%;
+    --gold-light: 40 70% 70%;
+    --gold-dark: 35 80% 40%;
+    --royal-blue: 215 65% 35%;
+    --royal-blue-light: 215 55% 50%;
+    --royal-blue-dark: 215 70% 25%;
+    --terracotta: 15 65% 55%;
+    --cream: 40 33% 96%;
+    --pattern-opacity: 0.03;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(215 65% 35% / 0.9), hsl(215 70% 25% / 0.95));
+    --gradient-gold: linear-gradient(135deg, hsl(38 75% 55%), hsl(35 80% 45%));
+    --gradient-card: linear-gradient(180deg, hsl(40 25% 97%), hsl(40 20% 94%));
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px hsl(220 25% 15% / 0.06);
+    --shadow-md: 0 4px 16px hsl(220 25% 15% / 0.08);
+    --shadow-lg: 0 8px 32px hsl(220 25% 15% / 0.12);
+    --shadow-gold: 0 4px 20px hsl(38 75% 55% / 0.3);
+
+    --sidebar-background: 40 25% 97%;
+    --sidebar-foreground: 220 25% 15%;
+    --sidebar-primary: 215 65% 35%;
+    --sidebar-primary-foreground: 40 33% 98%;
+    --sidebar-accent: 40 20% 93%;
+    --sidebar-accent-foreground: 220 25% 15%;
+    --sidebar-border: 40 20% 88%;
+    --sidebar-ring: 215 65% 35%;
+  }
+
+  .dark {
+    /* Deep navy background for dark mode */
+    --background: 220 35% 8%;
+    --foreground: 40 25% 95%;
+
+    --card: 220 30% 12%;
+    --card-foreground: 40 25% 95%;
+
+    --popover: 220 30% 10%;
+    --popover-foreground: 40 25% 95%;
+
+    --primary: 38 75% 55%;
+    --primary-foreground: 220 35% 8%;
+
+    --secondary: 215 55% 45%;
+    --secondary-foreground: 40 25% 95%;
+
+    --muted: 220 25% 18%;
+    --muted-foreground: 40 15% 65%;
+
+    --accent: 15 60% 50%;
+    --accent-foreground: 40 25% 95%;
+
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 40 25% 95%;
+
+    --border: 220 25% 20%;
+    --input: 220 25% 18%;
+    --ring: 38 75% 55%;
+
+    --gold: 38 75% 55%;
+    --gold-light: 40 65% 65%;
+    --gold-dark: 35 80% 45%;
+    --royal-blue: 215 55% 50%;
+    --royal-blue-light: 215 50% 60%;
+    --royal-blue-dark: 215 60% 35%;
+    --terracotta: 15 55% 50%;
+    --cream: 40 20% 15%;
+    --pattern-opacity: 0.05;
+
+    --gradient-hero: linear-gradient(135deg, hsl(220 35% 12%), hsl(220 40% 8%));
+    --gradient-gold: linear-gradient(135deg, hsl(38 75% 55%), hsl(35 70% 45%));
+    --gradient-card: linear-gradient(180deg, hsl(220 30% 12%), hsl(220 30% 10%));
+
+    --shadow-sm: 0 2px 8px hsl(0 0% 0% / 0.3);
+    --shadow-md: 0 4px 16px hsl(0 0% 0% / 0.4);
+    --shadow-lg: 0 8px 32px hsl(0 0% 0% / 0.5);
+    --shadow-gold: 0 4px 20px hsl(38 75% 55% / 0.2);
+
+    --sidebar-background: 220 30% 10%;
+    --sidebar-foreground: 40 25% 95%;
+    --sidebar-primary: 38 75% 55%;
+    --sidebar-primary-foreground: 220 35% 8%;
+    --sidebar-accent: 220 25% 18%;
+    --sidebar-accent-foreground: 40 25% 95%;
+    --sidebar-border: 220 25% 20%;
+    --sidebar-ring: 38 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "cv11", "ss01";
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .pattern-uzbek {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23215090' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary;
+  }
+
+  .btn-gold {
+    @apply bg-gradient-to-r from-secondary to-[hsl(35,80%,45%)] text-secondary-foreground font-medium;
+    @apply hover:shadow-[var(--shadow-gold)] transition-all duration-300;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+
+  .uzbek-border {
+    @apply border-2 border-primary/20 relative;
+  }
+
+  .uzbek-border::before {
+    content: '';
+    @apply absolute inset-0 border border-secondary/30 m-1 pointer-events-none;
+  }
+}
+
+@layer utilities {
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.4s ease-out forwards;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.5s ease-out forwards;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .stagger-1 { animation-delay: 0.1s; }
+  .stagger-2 { animation-delay: 0.2s; }
+  .stagger-3 { animation-delay: 0.3s; }
+  .stagger-4 { animation-delay: 0.4s; }
+  .stagger-5 { animation-delay: 0.5s; }
+}
