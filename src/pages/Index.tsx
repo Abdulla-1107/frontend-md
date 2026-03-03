@@ -106,7 +106,7 @@ const Index = () => {
           <img
             src={heroImage}
             alt="Traditional Uzbek Doppi"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-contain"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/40" />
         </div>
